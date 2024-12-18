@@ -41,11 +41,6 @@ def transact(sender_account, receiver_account, amount):
     Raises:
     - ValueError: If the `amount` is negative or zero, or if either of the accounts is invalid, or if there are insufficient funds in the `sender_account`, or if the sender and receiver are the same.
 
-    Example Usage:
-    - transact("account1", "account2", 200.00)  # Successful transaction.
-    - transact("account2", "account1", 1000.00)  # Raises ValueError due to insufficient funds.
-    - transact("account1", "account1", 100.00)   # Raises ValueError because sender and receiver are the same.
-    - transact("invalid_account", "account2", 100.00)  # Raises ValueError for invalid sender account.
     """
 
     #hint should use read_users and write_users from user_management
