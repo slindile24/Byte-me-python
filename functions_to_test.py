@@ -1,10 +1,10 @@
 # Placeholder functions for Python basics, to be implemented later
 
 def add_numbers(a, b):
-    pass
+    return a + b
 
 def find_maximum(a, b, c):
-    pass
+    return max(a,b,c)
 
 def is_palindrome(string):
     pass
@@ -13,19 +13,54 @@ def count_word_occurrences(text, word):
     pass
 
 def read_file_lines(filepath):
-    pass
+    with open(filepath,'r',errors= 'ignore') as f:
+        return f.readlines
 
 def factorial(n):
     pass
+#     try:
+#         n = int(n)
+#     except:
+#         raise TypeError
+#     if n < 0:
+#         raise ValueError
+#     if n == 0 or n == 1:
+#         return 1
+#     return n * factorial(n-1)
+# print(factorial(-1))
+
+    
 
 def is_prime(n):
-    pass
+    try:
+        n = int(n)
+    except:
+        raise TypeError("Invalid input type")
+    if n < 0:
+        raise ValueError
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n %2 == 0:
+        return False 
+    for i in range(3,int(n**0.5)+1,2):
+        if n % i == 0:
+            return False
+    return True
+print(is_prime(5))
 
 def sort_numbers(numbers):
     pass
 
 def factorial(n):
-    pass
+    if n < 0:
+        return ""
+    if n == 0 or n == 1:
+        return 1
+    
+    return n * factorial(n-1)
+print(factorial(-1))
 
 def fibonacci(n):
     pass
