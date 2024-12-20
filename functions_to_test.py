@@ -21,7 +21,7 @@ def factorial(n):
 #     try:
 #         n = int(n)
 #     except:
-#         raise TypeError
+#         raise TypeError("Invalid input type")
 #     if n < 0:
 #         raise ValueError
 #     if n == 0 or n == 1:
@@ -51,7 +51,20 @@ def is_prime(n):
 print(is_prime(5))
 
 def sort_numbers(numbers):
-    pass
+    try:
+        iter(numbers)
+        for element in numbers:
+            if not(type(element)==int or type(element)==float):
+                raise TypeError("All elements must be numbers")
+        return sorted(numbers)
+    except:
+        raise TypeError("Input must be a number")
+        
+    # try:
+    #     x = int(numbers)
+    #     return sorted(x)
+    # except:
+    #     raise TypeError
 
 def factorial(n):
     if n < 0:
@@ -63,7 +76,21 @@ def factorial(n):
 print(factorial(-1))
 
 def fibonacci(n):
-    pass
+
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    a,b = 0,1
+    
+    for i in range(2,n + 1):
+        a,b = b,a+b
+    return b
+    
+
+    # return fibonacci(n-1) + fibonacci(n + 2)
+
+
 
 def tower_of_hanoi(n, source, auxiliary, target):
     
